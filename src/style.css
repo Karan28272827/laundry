@@ -133,6 +133,7 @@ footer {
   padding: 20px;
   text-align: center;
   animation: fadeIn 2s ease-in-out;
+  position: static;
 }
 
 footer .social-links {

@@ -8,6 +8,11 @@ const Services = () => {
     return (
         <section className="services">
             <h2>Our Services</h2>
+
+             <div className="hero-content">
+                <button onClick={handleOrderNowClick}>Order Now</button>
+                </div>
+
             <div className="service-cards">
                 <div className="card">
                     <img src="./images/laundry.jpg" alt="Laundry" />
@@ -25,9 +30,7 @@ const Services = () => {
                     <p>Get perfectly ironed clothes every time.</p>
                 </div>
 
-                <div className="hero-content">
-                <button onClick={handleOrderNowClick}>Order Now</button>
-                </div>
+                
             </div>
         </section>
     );
