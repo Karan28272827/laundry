@@ -9,6 +9,13 @@ import Popup from './components/popup';
 import { Services, Footer } from './components/services';
 
 export default function App() {
+    const [popupTrigger, setPopupTrigger] = useState(true); // Manage popup trigger state
+    const navigate = useNavigate(); // Hook for navigation
+
+    const handleClosePopup = () => {
+        setPopupTrigger(false); // Close the popup
+        navigate('/'); // Navigate to the home page
+    };
     return(
         <div>
             <Nav />
@@ -21,7 +28,7 @@ export default function App() {
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
-            <Popup trigger = {true}>
+            <Popup trigger={popupTrigger} setTrigger={setPopupTrigger}>
                 <h3>My Popup</h3>
                 <p>This popup can be closed to navigate back to the home page.</p>
                 <button onClick={handleClosePopup}>Close and Go to Home</button>
