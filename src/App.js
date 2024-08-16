@@ -16,6 +16,9 @@ export default function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/" element={<Home/>}/>
+
+                <Route path="/services" element={<Services />} />
+
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Popup trigger = {true}>
