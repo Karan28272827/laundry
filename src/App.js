@@ -6,20 +6,25 @@ import Signup from './components/Signup';
 import Home from './components/home';
 import NotFound from './components/notfound';
 import Popup from './components/popup';
+import { Services, Footer } from './components/services';
 
 export default function App() {
-    return(
+    return (
         <div>
             <Nav />
             <Routes>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-            <Popup trigger = {true}>
+            <Popup trigger={true}>
                 <h3>My Popup</h3>
             </Popup>
+            <Footer />  
         </div>
-    )
+    );
 }
+
+
