@@ -6,7 +6,7 @@ import Signup from './components/Signup';
 import Home from './components/home';
 import NotFound from './components/notfound';
 import Popup from './components/popup';
-import { Services } from './components/services';
+import { Services , Footer} from './components/services';
 
 export default function App() {
     const [popupTrigger, setPopupTrigger] = useState(false);

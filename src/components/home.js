@@ -1,5 +1,5 @@
 import React from 'react';
-import { Services } from './services';
+import { Services ,Footer} from './services';
 export default function Home  ()  {
   return (
     <div>
