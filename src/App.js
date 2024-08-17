@@ -6,7 +6,7 @@ import Signup from './components/Signup';
 import Home from './components/home';
 import NotFound from './components/notfound';
 import Popup from './components/popup';
-import { Services } from './components/services';
+import { Services , Footer} from './components/services';
 import CustomerSignup from './components/CustomerSignup';
 import LSignup from './components/LSignup';
 import DSignup from './components/DSignup';
