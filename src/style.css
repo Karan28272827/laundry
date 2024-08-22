@@ -112,6 +112,10 @@ button {
   @apply text-lg;
 }
 
+.landing-page button {
+  @apply bg-blue-600 text-white rounded-md px-4 py-2 transition hover:bg-blue-700;
+}
+
 /* styles.css */
 .close-btn {
   @apply absolute top-2 right-2 cursor-pointer bg-red-600 text-white border-none p-1 rounded-sm;
