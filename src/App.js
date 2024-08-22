@@ -11,6 +11,7 @@ import CustomerSignup from './components/CustomerSignup';
 import LSignup from './components/LSignup';
 import DSignup from './components/DSignup';
 import CMain from './components/cmain';
+import LandingPage from './components/landingpage';
 
 export default function App() {
     const [popupTrigger, setPopupTrigger] = useState(false);
