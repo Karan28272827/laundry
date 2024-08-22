@@ -21,6 +21,8 @@ export default function Signup() {
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords don't match!");
       return;
+
+      
     }
 
     console.log('Form Submitted:', formData);
