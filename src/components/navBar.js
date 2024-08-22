@@ -10,24 +10,21 @@ export default function Nav({ onLoginClick, onSignupClick }) {
 
     const handleLoginClick = (e) => {
         e.preventDefault(); // Prevent default link behavior
-        onLoginClick(); // Trigger popup
-        setTimeout(() => navigate('/login'), 0); // Navigate to login page after showing popup
+        onLoginClick(); // Trigger the login popup
     };
 
     const handleSignupClick = (e) => {
         e.preventDefault(); // Prevent default link behavior
-        onSignupClick(); // Trigger popup
-        setTimeout(() => navigate('/signup'), 0); // Navigate to signup page after showing popup
+        onSignupClick(); // Trigger the signup popup
     };
 
     return (
         <nav>
             <img src="/images/logo.png" onClick={handleLogoClick} className="nav--logo" alt="Logo" />
             <div className="nav--links">
-                <Link to="/login" onClick={handleLoginClick}>Login</Link> / 
-                <Link to="/signup" onClick={handleSignupClick}>Sign Up</Link>
+                <a href="/" onClick={handleLoginClick}>Login</a> / 
+                <a href="/" onClick={handleSignupClick}>Sign Up</a>
             </div>
         </nav>
     );
 }
-

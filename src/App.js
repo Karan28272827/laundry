@@ -7,6 +7,10 @@ import Home from './components/home';
 import NotFound from './components/notfound';
 import Popup from './components/popup';
 import { Services } from './components/services';
+import CustomerSignup from './components/CustomerSignup';
+import LSignup from './components/LSignup';
+import DSignup from './components/DSignup';
+import CMain from './components/cmain';
 
 export default function App() {
     const [popupTrigger, setPopupTrigger] = useState(false);
@@ -25,6 +29,17 @@ export default function App() {
         navigate('/'); // Navigate to the home page
     };
 
+    const handleSignupType = (type) => {
+        if (type === 'C') {
+            navigate('/customer-signup'); // Navigate to Customer Signup page
+        } else if (type === 'L') {
+            navigate('/l-signup'); // Navigate to L Signup page
+        } else if (type === 'D') {
+            navigate('/d-signup'); // Navigate to D Signup page
+        }
+        setPopupTrigger(false); // Close the popup after navigation
+    };
+
     return (
         <div>
             <Nav 
@@ -36,11 +51,20 @@ export default function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/customer-signup" element={<CustomerSignup />} />
+                <Route path="/l-signup" element={<LSignup />} />
+                <Route path="/d-signup" element={<DSignup />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path="/cmain" element={<CMain />} />
             </Routes>
             <Popup trigger={popupTrigger} setTrigger={setPopupTrigger}>
-                <h3>My Popup</h3>
-                <p>This popup appears when the login or signup button is clicked.</p>
+                <h3>Signup Type</h3>
+                <p>Select the type of signup:</p>
+                <div className="button-group">
+                    <button onClick={() => handleSignupType('C')}>Customer Signup</button>
+                    <button onClick={() => handleSignupType('L')}>L Signup</button>
+                    <button onClick={() => handleSignupType('D')}>D Signup</button>
+                </div>
                 <button onClick={handleClosePopup}>Close and Go to Home</button>
             </Popup>
         </div>
