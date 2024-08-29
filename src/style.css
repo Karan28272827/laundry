@@ -77,9 +77,39 @@ footer {
   @apply container-base;
 }
 
+/* Darker Login Box */
 .signup-container {
-  @apply container-base;
+  background-color: #1a1a1a; /* Darker background */
+  color: #fff; /* White text for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.signup-container .form-group label {
+  color: #ddd;
+}
+
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+  background-color: #2b2b2b; /* Darker input fields */
+  color: #fff;
+  border: 1px solid #444; /* Darker border */
+}
+
+.signup-container button[type="submit"] {
+  background-color: #333; /* Darker button */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-container button[type="submit"]:hover {
+  background-color: #444; /* Slightly lighter on hover */
+}
+
 
 /* Media query for smaller screens */
 @media (max-width: 640px) {
@@ -186,4 +216,69 @@ button {
 
 .new-btn{
   
+}
+
+/* Prolonged and Darker Transition Effect */
+/* Prolonged and Darker Transition Effect */
+.transitioning {
+  position: relative;
+  overflow: hidden;
+}
+
+.transitioning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(3, 7, 19); /* Darker base color */
+  background: linear-gradient(0deg, rgba(3,7,19,1) 0%, rgba(20,80,180,1) 100%); /* Darker gradient */
+  opacity: 0.85; /* Slightly increased opacity */
+  z-index: 1;
+  animation: darken 6s linear forwards; /* Prolonged duration */
+}
+
+/* Bubble Effect */
+@keyframes animate {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1200%);
+    opacity: 0;
+  }
+}
+
+.transitioning span {
+  position: absolute;
+  bottom: -50px;
+  background: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4);
+  animation: animate 6s linear infinite; /* Prolonged duration */
+}
+
+.transitioning span:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.25) translate(-70%, -70%);
+  background: radial-gradient(#bbb, transparent); /* Slightly darker bubbles */
+  border-radius: 50%;
+}
+
+@keyframes darken {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.85;
+  }
 }

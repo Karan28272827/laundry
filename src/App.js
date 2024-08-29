@@ -12,6 +12,7 @@ import LSignup from './components/LSignup';
 import DSignup from './components/DSignup';
 import CMain from './components/cmain';
 import LandingPage from './components/landingpage';
+import LaundryOptions from './components/LaundryOptions'; // Import the new component
 
 export default function App() {
     const [popupTrigger, setPopupTrigger] = useState(false);
@@ -55,8 +56,9 @@ export default function App() {
                 <Route path="/customer-signup" element={<CustomerSignup />} />
                 <Route path="/l-signup" element={<LSignup />} />
                 <Route path="/d-signup" element={<DSignup />} />
-                <Route path="*" element={<NotFound />} />
                 <Route path="/cmain" element={<CMain />} />
+                <Route path="/laundry-options" element={<LaundryOptions />} /> {/* New route */}
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <Popup trigger={popupTrigger} setTrigger={setPopupTrigger}>
                 <h3>Signup Type</h3>

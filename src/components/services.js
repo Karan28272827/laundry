@@ -1,18 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
+    const navigate = useNavigate();
+
     const handleOrderNowClick = () => {
-        alert('Order Now functionality will be implemented soon!');
+        navigate('/laundry-options');
     };
 
     return (
         <section className="services">
             <h2>Our Services</h2>
-
-             <div className="hero-content">
+            <div className="hero-content">
                 <button onClick={handleOrderNowClick}>Order Now</button>
-                </div>
-
+            </div>
             <div className="service-cards">
                 <div className="card">
                     <img src="./images/laundry.jpg" alt="Laundry" />
@@ -29,8 +30,6 @@ const Services = () => {
                     <h3>Ironing</h3>
                     <p>Get perfectly ironed clothes every time.</p>
                 </div>
-
-                
             </div>
         </section>
     );
@@ -50,7 +49,5 @@ const Footer = () => {
         </footer>
     );
 };
-
-
 
 export { Services, Footer };
