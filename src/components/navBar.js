@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function Nav({ onLoginClick, onSignupClick }) {
+export default function Nav({ onLoginClick, onSignupClick, linksVisible }) {
     const navigate = useNavigate();
 
     const handleLogoClick = () => {
@@ -21,10 +21,12 @@ export default function Nav({ onLoginClick, onSignupClick }) {
     return (
         <nav>
             <img src="/images/logo.png" onClick={handleLogoClick} className="nav--logo" alt="Logo" />
-            <div className="nav--links">
-                <a href="/" onClick={handleLoginClick}>Login</a> / 
-                <a href="/" onClick={handleSignupClick}>Sign Up</a>
-            </div>
+            {linksVisible && (
+                <div className="nav--links">
+                    <a href="/" onClick={handleLoginClick}>Login</a> / 
+                    <a href="/" onClick={handleSignupClick}>Sign Up</a>
+                </div>
+            )}
         </nav>
     );
 }

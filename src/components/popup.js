@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 function Popup({ trigger, setTrigger }) {
   const navigate = useNavigate();
 
@@ -9,9 +8,9 @@ function Popup({ trigger, setTrigger }) {
     if (type === 'C') {
       navigate('/customer-signup'); // Navigate to Customer Signup page
     } else if (type === 'L') {
-      navigate('/l-signup'); // Navigate to L Signup page
+      navigate('/l-signup'); // Navigate to Laundry Signup page
     } else if (type === 'D') {
-      navigate('/d-signup'); // Navigate to D Signup page
+      navigate('/d-signup'); // Navigate to Delivery Signup page
     }
     setTrigger(false); // Close the popup after navigation
   };
@@ -30,6 +29,7 @@ function Popup({ trigger, setTrigger }) {
         <h3>Signup Type</h3>
         <p>Select the type of signup:</p>
         <div className="button-group">
+<<<<<<< HEAD
           <button onClick={() => handleSignupType('C')} className="btn">
             Customer Signup
           </button>
@@ -39,6 +39,11 @@ function Popup({ trigger, setTrigger }) {
           <button onClick={() => handleSignupType('D')} className="btn">
             D Signup
           </button>
+=======
+          <button onClick={() => handleSignupType('C')}>Customer Signup</button>
+          <button onClick={() => handleSignupType('L')}>Laundry Signup</button>
+          <button onClick={() => handleSignupType('D')}>Delivery Signup</button>
+>>>>>>> origin/Karan
         </div>
       </div>
     </div>
