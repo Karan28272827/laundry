@@ -130,3 +130,163 @@ button {
 
   
 }
+/* Customer Signup Page Integration */
+.customer-signup-container {
+  @apply max-w-lg mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-md;
+}
+
+.customer-signup-title {
+  @apply text-2xl font-semibold mb-6 text-center text-gray-800;
+}
+
+.customer-signup-form {
+  @apply flex flex-col gap-4;
+}
+
+.customer-signup-form-group {
+  @apply flex flex-col;
+}
+
+.customer-signup-form-label {
+  @apply mb-2 text-gray-600 font-medium;
+}
+
+.customer-signup-form-input {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+.customer-signup-button {
+  @apply w-full mt-4 py-3 bg-blue-600 text-white text-base font-semibold rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Tailwind CSS for Delivery Boy Signup Page */
+
+/* Delivery Signup Container */
+.delivery-signup-container {
+  @apply max-w-lg mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-md;
+}
+
+/* Delivery Signup Title */
+.delivery-signup-title {
+  @apply text-2xl font-semibold mb-6 text-center text-gray-800;
+}
+
+/* Delivery Signup Form */
+.delivery-signup-form {
+  @apply flex flex-col gap-4;
+}
+
+/* Form Group */
+.delivery-signup-form-group {
+  @apply flex flex-col;
+}
+
+/* Form Label */
+.delivery-signup-form-label {
+  @apply mb-2 text-gray-600 font-medium;
+}
+
+/* Form Input */
+.delivery-signup-form-input {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+/* Submit Button */
+.delivery-signup-button {
+  @apply w-full mt-4 py-3 bg-blue-600 text-white text-base font-semibold rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Tailwind CSS for Laundry Person Signup Page */
+
+/* Laundry Signup Container */
+.laundry-signup-container {
+  @apply max-w-lg mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-md;
+}
+
+/* Laundry Signup Title */
+.laundry-signup-title {
+  @apply text-2xl font-semibold mb-6 text-center text-gray-800;
+}
+
+/* Laundry Signup Form */
+.laundry-signup-form {
+  @apply flex flex-col gap-4;
+}
+
+/* Form Group */
+.laundry-signup-form-group {
+  @apply flex flex-col;
+}
+
+/* Form Label */
+.laundry-signup-form-label {
+  @apply mb-2 text-gray-600 font-medium;
+}
+
+/* Form Input */
+.laundry-signup-form-input {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+/* Submit Button */
+.laundry-signup-button {
+  @apply w-full mt-4 py-3 bg-blue-600 text-white text-base font-semibold rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Container Styles */
+.lmain-container {
+  @apply flex flex-col min-h-screen bg-gray-100;
+}
+
+/* Header Styles */
+.lmain-header {
+  @apply bg-blue-600 text-white py-4 text-center;
+}
+
+.lmain-title {
+  @apply text-3xl font-bold;
+}
+
+/* Content Styles */
+.lmain-content {
+  @apply flex flex-col flex-grow p-6;
+}
+
+.lmain-overview {
+  @apply mb-8 bg-white p-6 rounded-lg shadow-md;
+}
+
+.section-title {
+  @apply text-2xl font-semibold mb-4;
+}
+
+/* Actions Section Styles */
+.lmain-actions {
+  @apply flex flex-col md:flex-row justify-around gap-6;
+}
+
+.action-card {
+  @apply bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-all;
+}
+
+.action-card h3 {
+  @apply text-xl font-semibold mb-2;
+}
+
+.action-card p {
+  @apply text-gray-600 mb-4;
+}
+
+.action-button {
+  @apply bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Footer Styles */
+.lmain-footer {
+  @apply bg-gray-800 text-white text-center p-4 mt-6;
+}
+
+.lmain-footer p {
+  @apply m-0;
+}
+
