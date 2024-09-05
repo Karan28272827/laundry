@@ -1,33 +1,32 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-export default function Signup  ()  {
+export default function Signup() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: ''
   });
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-   // Handle form submission
-   const handleSubmit = (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate the form data (e.g., check if passwords match)
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords don't match!");
       return;
+
+      
     }
 
-    // Normally, you'd send the data to your backend API here
     console.log('Form Submitted:', formData);
 
-    // Clear the form after submission
     setFormData({
       name: '',
       email: '',
@@ -35,6 +34,7 @@ export default function Signup  ()  {
       confirmPassword: ''
     });
   };
+
   return (
     <div className="signup-container">
       <h2>Sign Up</h2>
@@ -87,5 +87,4 @@ export default function Signup  ()  {
       </form>
     </div>
   );
-};
-
+}
