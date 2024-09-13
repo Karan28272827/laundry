@@ -29,21 +29,9 @@ function Popup({ trigger, setTrigger }) {
         <h3>Signup Type</h3>
         <p>Select the type of signup:</p>
         <div className="button-group">
-<<<<<<< HEAD
-          <button onClick={() => handleSignupType('C')} className="btn">
-            Customer Signup
-          </button>
-          <button onClick={() => handleSignupType('L')} className="btn">
-            L Signup
-          </button>
-          <button onClick={() => handleSignupType('D')} className="btn">
-            D Signup
-          </button>
-=======
           <button onClick={() => handleSignupType('C')}>Customer Signup</button>
           <button onClick={() => handleSignupType('L')}>Laundry Signup</button>
           <button onClick={() => handleSignupType('D')}>Delivery Signup</button>
->>>>>>> origin/Karan
         </div>
       </div>
     </div>

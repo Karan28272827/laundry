@@ -5,15 +5,18 @@ import LoginPage from './components/login';
 import Signup from './components/Signup';
 import Home from './components/home';
 import NotFound from './components/notfound';
-import Popup from './components/popup';
-import { Services, Footer } from './components/services';
-import CustomerSignup from './components/CustomerSignup';
+import Popup from './components/popup';import CustomerSignup from './components/CustomerSignup';
 import LSignup from './components/LSignup';
 import DSignup from './components/DSignup';
 import CMain from './components/cmain';
 import LandingPage from './components/landingpage';
 import LaundryOptions from './components/LaundryOptions'; // Import the new component
 import Lmain from './components/Lmain';
+import Footer from './components/Footer';
+import { Services } from './components/services';
+import Dmain from './components/Dmain';
+import Cmain from './components/cmain';
+
 
 export default function App() {
     const [popupTrigger, setPopupTrigger] = useState(false);
@@ -63,15 +66,17 @@ export default function App() {
                 onSignupClick={handleSignupClick}
                 linksVisible={linksVisible}
             />
-            <Routes>
+            < Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/customer-signup" element={<CustomerSignup />} />
                 <Route path="/l-signup" element={<LSignup />} />
+                <Route path="/lmain" element={<Lmain />} />
                 <Route path="/d-signup" element={<DSignup />} />
-                <Route path="/cmain" element={<CMain />} />
+                <Route path="/cmain" element={<Cmain />} />
+                <Route path="/Dmain" element={<Dmain />} />
             </Routes>
             <Popup trigger={popupTrigger} setTrigger={setPopupTrigger}>
                 <h3>Signup Type</h3>
@@ -83,7 +88,8 @@ export default function App() {
                 </div>
                 <button onClick={handleClosePopup}>Close and Go to Home</button>
             </Popup>
-            <Footer /> {/* Include Footer at the bottom of the page */}
+            <Footer>
+                </Footer> {/* Include Footer at the bottom of the page */}
         </div>
     );
 }

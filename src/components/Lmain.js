@@ -32,9 +32,6 @@ function Lmain() {
         </section>
       </main>
       
-      <footer className="lmain-footer">
-        <p>&copy; 2024 Laundry Service. All rights reserved.</p>
-      </footer>
     </div>
   );
 }

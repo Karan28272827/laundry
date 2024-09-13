@@ -443,3 +443,44 @@ button {
   @apply m-0;
 }
 
+.lmain-container, .dmain-container, .cmain-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.lmain-header, .dmain-header, .cmain-header {
+  background-color: #ff5722;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.lmain-title, .dmain-title, .cmain-title {
+  font-size: 2em;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.action-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.action-button {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #e64a19;
+}

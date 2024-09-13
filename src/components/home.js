@@ -13,7 +13,7 @@ export default function Home() {
       <Services>
 
       </Services>
-      <Footer></Footer> 
+      
     </div>
   );
 }
