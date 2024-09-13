@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  @apply h-full m-0 p-0 bg-gray-100 font-sans;
+}
+
+/* * {
+  @apply box-b   p-0;
+} */
+
+body {
+  @apply grid grid-rows-[1fr,10rem,auto] overflow-x-hidden;
+}
+
+#root {
+  @apply flex flex-col min-h-full;
+}
+
+nav {
+  @apply h-[110px] flex items-center justify-between px-6 py-5 shadow-md bg-white relative;
+}
+
+.nav--logo {
+  @apply w-auto h-[110px] absolute top-0 left-0 mt-0 ml-0;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.nav--links {
+  @apply flex items-center space-x-4 text-lg ml-auto;
+}
+
+.nav--logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+
+.nav--links a {
+  @apply text-gray-800 no-underline hover:text-blue-500 transition-colors;
+}
+
+/* Footer Styles */
+footer {
+  @apply bg-gray-800 text-white p-5 text-center static  bottom-0 left-0 w-full shadow-inner;
+}
+
+/* Service Section */
+
+.services {
+  @apply p-12 bg-gray-100 text-center;
+}
+
+.service-cards {
+  @apply flex justify-center items-center gap-5 flex-wrap;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-lg w-full sm:w-[30%] p-5 text-center cursor-pointer transform transition-transform duration-500 hover:scale-105 hover:rotate-3 hover:shadow-2xl;
+}
+
+/* Form Styles */
+.login-container, .signup-container {
+  @apply max-w-sm mx-auto my-20 p-5 border border-gray-300 rounded-md shadow-lg bg-white;
+}
+
+form {
+  @apply flex flex-col;
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+label {
+  @apply block mb-2 text-gray-600;
+}
+
+input {
+  @apply w-full p-2 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+button {  
+  @apply w-auto px-5 py-3 bg-blue-600 text-white text-base rounded-md hover:bg-blue-700 transition-colors;
+
+}
+
+/* Popup Styles */
+.popup {
+  @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center;
+}
+
+.popup-inner {
+  @apply bg-white p-5 rounded-md relative w-72 max-w-4/5 shadow-lg;
+}
+
+.close-btn {
+  @apply absolute top-2 right-2 cursor-pointer bg-red-600 text-white p-1 rounded-sm;
+}
+
+/* styles.css */
+.landing-page {
+  @apply relative bg-gray-900;
+}
+
+.landing-page h1 {
+  @apply text-4xl font-bold;
+}
+
+.landing-page p {
+  @apply text-lg;
+}
+
+.landing-page button {
+  @apply bg-blue-600 text-white rounded-md px-4 py-2 transition hover:bg-blue-700;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+
+
+  
+}
+/* Customer Signup Page Integration */
+.customer-signup-container {
+  @apply max-w-lg mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-md;
+}
+
+.customer-signup-title {
+  @apply text-2xl font-semibold mb-6 text-center text-gray-800;
+}
+
+.customer-signup-form {
+  @apply flex flex-col gap-4;
+}
+
+.customer-signup-form-group {
+  @apply flex flex-col;
+}
+
+.customer-signup-form-label {
+  @apply mb-2 text-gray-600 font-medium;
+}
+
+.customer-signup-form-input {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+.customer-signup-button {
+  @apply w-full mt-4 py-3 bg-blue-600 text-white text-base font-semibold rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Tailwind CSS for Delivery Boy Signup Page */
+
+/* Delivery Signup Container */
+.delivery-signup-container {
+  @apply max-w-lg mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-md;
+}
+
+/* Delivery Signup Title */
+.delivery-signup-title {
+  @apply text-2xl font-semibold mb-6 text-center text-gray-800;
+}
+
+/* Delivery Signup Form */
+.delivery-signup-form {
+  @apply flex flex-col gap-4;
+}
+
+/* Form Group */
+.delivery-signup-form-group {
+  @apply flex flex-col;
+}
+
+/* Form Label */
+.delivery-signup-form-label {
+  @apply mb-2 text-gray-600 font-medium;
+}
+
+/* Form Input */
+.delivery-signup-form-input {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+/* Submit Button */
+.delivery-signup-button {
+  @apply w-full mt-4 py-3 bg-blue-600 text-white text-base font-semibold rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Tailwind CSS for Laundry Person Signup Page */
+
+/* Laundry Signup Container */
+.laundry-signup-container {
+  @apply max-w-lg mx-auto mt-10 p-6 bg-white border border-gray-300 rounded-lg shadow-md;
+}
+
+/* Laundry Signup Title */
+.laundry-signup-title {
+  @apply text-2xl font-semibold mb-6 text-center text-gray-800;
+}
+
+/* Laundry Signup Form */
+.laundry-signup-form {
+  @apply flex flex-col gap-4;
+}
+
+/* Form Group */
+.laundry-signup-form-group {
+  @apply flex flex-col;
+}
+
+/* Form Label */
+.laundry-signup-form-label {
+  @apply mb-2 text-gray-600 font-medium;
+}
+
+/* Form Input */
+.laundry-signup-form-input {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+/* Submit Button */
+.laundry-signup-button {
+  @apply w-full mt-4 py-3 bg-blue-600 text-white text-base font-semibold rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Container Styles */
+.lmain-container {
+  @apply flex flex-col min-h-screen bg-gray-100;
+}
+
+/* Header Styles */
+.lmain-header {
+  @apply bg-blue-600 text-white py-4 text-center;
+}
+
+.lmain-title {
+  @apply text-3xl font-bold;
+}
+
+/* Content Styles */
+.lmain-content {
+  @apply flex flex-col flex-grow p-6;
+}
+
+.lmain-overview {
+  @apply mb-8 bg-white p-6 rounded-lg shadow-md;
+}
+
+.section-title {
+  @apply text-2xl font-semibold mb-4;
+}
+
+/* Actions Section Styles */
+.lmain-actions {
+  @apply flex flex-col md:flex-row justify-around gap-6;
+}
+
+.action-card {
+  @apply bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-all;
+}
+
+.action-card h3 {
+  @apply text-xl font-semibold mb-2;
+}
+
+.action-card p {
+  @apply text-gray-600 mb-4;
+}
+
+.action-button {
+  @apply bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors;
+}
+
+/* Footer Styles */
+.lmain-footer {
+  @apply bg-gray-800 text-white text-center p-4 mt-6;
+}
+
+.lmain-footer p {
+  @apply m-0;
+}
+
