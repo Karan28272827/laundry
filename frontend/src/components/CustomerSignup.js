@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 function CustomerSignup() {
+  const [customer, setCustomer] = useState([])
+  useEffect(() =>{
+    const getCustomer = async() =>{
+      try {
+        const res = await axios.get("http://localhost:4001/customer")
+        console.log(res.data)
+        setCustomer(res.data)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getCustomer();
+  },[])
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',

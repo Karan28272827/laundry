@@ -1,11 +1,13 @@
 import  express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import  ClothesModel from './model/clothes.model.js'
 import clothRoute from './router/cloth.route.js'
 import customerRoute from './router/customer.route.js'
-const app = express()
+import cors from 'cors'
 
+const app = express()
+app.use(cors())
+app.use(express.json())
  // Adjust the path and extension as needed
 
 dotenv.config();

@@ -1,19 +1,20 @@
 import mongoose from "mongoose";    
 
 const customerSchema = mongoose.Schema({
-    Name: {
+    fullname: {
         type: String,
         required: true,
     },
-    Phone: {
+    phone: {
         type: Number,
         required: true,
     },
-    Email: {
+    email: {
         type: String,
         required: true,
+        unique:true
     },
-    Password: {
+    password: {
         type: String,
         required: true,
     }
