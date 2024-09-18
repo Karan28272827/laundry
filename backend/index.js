@@ -4,6 +4,8 @@ import mongoose from 'mongoose'
 import clothRoute from './router/cloth.route.js'
 import customerRoute from './router/customer.route.js'
 import cors from 'cors'
+import orderRoute from './router/order.route.js'
+import userRoute from './router/user.route.js'
 
 const app = express()
 app.use(cors())
@@ -27,6 +29,8 @@ try {
 //defining routes 
 app.use('/cloth',clothRoute)
 app.use('/customer',customerRoute)
+app.use('/order',orderRoute)
+app.use("/user",userRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

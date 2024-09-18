@@ -1,126 +1,122 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
+import React from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 function CustomerSignup() {
-  const [customer, setCustomer] = useState([])
-  useEffect(() =>{
-    const getCustomer = async() =>{
-      try {
-        const res = await axios.get("http://localhost:4001/customer")
-        console.log(res.data)
-        setCustomer(res.data)
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getCustomer();
-  },[])
+  // useLocation and useNavigate hooks for routing
+  const location = useLocation();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    password: ''
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  // Redirect path after successful signup
+  const from = location.state?.from?.pathname || '/cmain';
 
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+  // Initializing react-hook-form for form management
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    if (name === 'email') {
-      setEmail(value); // Update the email state
-      sendEmail(); // Send OTP whenever email is updated
-    }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Customer Signup Data:', formData);
-    navigate('/cmain');
-  };
-  const [email, setEmail] = useState("");
-
-  const baseUrl = "http://localhost:3000";
-
-  const sendEmail = async () => {
-    let dataSend = {
-      email: email,
+  // onSubmit function to handle form submission
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      phone: data.phone,
+      email: data.email,
+      password: data.password,
     };
 
-    const res = await fetch(`${baseUrl}/email/sendEmail`, {
-      method: "POST",
-      body: JSON.stringify(dataSend),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      // HANDLING ERRORS
-      .then((res) => {
-        console.log(res);
-        if (res.status > 199 && res.status < 300) {
-          alert("Send Successfully !");
-        }
-      });
+    try {
+      const res = await axios.post('http://localhost:4001/user/signup', userInfo);
+      console.log(res.data);
+
+      if (res.data) {
+        toast.success('Signup Successfully');
+        localStorage.setItem('Customer', JSON.stringify(res.data.customer)); // Store customer data locally
+        navigate(from, { replace: true }); // Navigate to the desired page after signup
+      }
+    } catch (err) {
+      if (err.response) {
+        console.log(err);
+        toast.error('Error: ' + err.response.data.message); // Show error if signup fails
+      }
+    }
   };
 
   return (
     <div className="customer-signup-container">
       <h1 className="customer-signup-title">Customer Signup</h1>
-      <form onSubmit={handleSubmit} className="customer-signup-form">
+
+      {/* Form for customer signup */}
+      <form onSubmit={handleSubmit(onSubmit)} className="customer-signup-form">
+
+        {/* Input field for name */}
         <div className="customer-signup-form-group">
           <label className="customer-signup-form-label" htmlFor="name">Name:</label>
           <input
             type="text"
-            name="name"
-            id="name"
-            value={formData.name}
-            onChange={handleChange}
+            placeholder="Enter your full name"
             className="customer-signup-form-input"
-            required
+            {...register('fullname', { required: true })}
           />
+          {errors.fullname && (
+            <span className="text-sm text-red-500">
+              This field is required
+            </span>
+          )}
         </div>
+
+        {/* Input field for phone */}
         <div className="customer-signup-form-group">
           <label className="customer-signup-form-label" htmlFor="phone">Phone:</label>
           <input
             type="text"
-            name="phone"
-            id="phone"
-            value={formData.phone}
-            onChange={handleChange}
+            placeholder="Enter your phone number"
             className="customer-signup-form-input"
-            required
+            {...register('phone', { required: true })}
           />
+          {errors.phone && (
+            <span className="text-sm text-red-500">
+              This field is required
+            </span>
+          )}
         </div>
+
+        {/* Input field for email */}
         <div className="customer-signup-form-group">
           <label className="customer-signup-form-label" htmlFor="email">Email:</label>
           <input
             type="email"
-            name="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
+            placeholder="Enter your email"
             className="customer-signup-form-input"
-            required
+            {...register('email', { required: true })}
           />
+          {errors.email && (
+            <span className="text-sm text-red-500">
+              This field is required
+            </span>
+          )}
         </div>
+
+        {/* Input field for password */}
         <div className="customer-signup-form-group">
           <label className="customer-signup-form-label" htmlFor="password">Password:</label>
           <input
             type="password"
-            name="password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
+            placeholder="Enter your password"
             className="customer-signup-form-input"
-            required
+            {...register('password', { required: true })}
           />
+          {errors.password && (
+            <span className="text-sm text-red-500">
+              This field is required
+            </span>
+          )}
         </div>
+
+        {/* Submit button for the form */}
         <button type="submit" className="customer-signup-button">Submit</button>
       </form>
     </div>
@@ -128,5 +124,3 @@ function CustomerSignup() {
 }
 
 export default CustomerSignup;
-
-
