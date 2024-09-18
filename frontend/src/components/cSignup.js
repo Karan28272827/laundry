@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import {  useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -10,7 +10,7 @@ function CustomerSignup() {
   const navigate = useNavigate();
 
   // Redirect path after successful signup
-  const from = location.state?.from?.pathname || '/cmain';
+  const from = location.state?.from?.pathname || '/cMain';
 
   // Initializing react-hook-form for form management
   const {

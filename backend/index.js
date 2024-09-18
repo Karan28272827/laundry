@@ -18,14 +18,12 @@ const URI = process.env.mongoDBURI;
 
 //connect to mongoDB
 try {
-    mongoose.connect(URI,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+    mongoose.connect(URI);
     console.log("Connected to mongoDB");
 } catch (error) {
-    console.log("Error:",error);
+    console.log("Error:", error);
 }
+
 //defining routes 
 app.use('/cloth',clothRoute)
 app.use('/customer',customerRoute)

@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import Nav from './components/navBar';
 import LoginPage from './components/login';
-import Signup from './components/Signup';
+import Signup from './components/signup';
 import Home from './components/home';
-import NotFound from './components/notfound';
+import NotFound from './components/notFound';
 import Popup from './components/popup';
 import { Services, Footer } from './components/services';
-import CustomerSignup from './components/CustomerSignup';
-import LSignup from './components/LSignup';
-import DSignup from './components/DSignup';
-import CMain from './components/cmain';
+import CustomerSignup from './components/cSignup';
+import LSignup from './components/lSignup';
+import DSignup from './components/dSignup';
+import CMain from './components/cMain';
 // import LandingPage from './components/landingpage';
-import Lmain from './components/Lmain';
+import Lmain from './components/lMain';
 
 export default function App() {
     const [popupTrigger, setPopupTrigger] = useState(false);
