@@ -37,6 +37,8 @@ function CustomerSignup() {
         localStorage.setItem('Customer', JSON.stringify(res.data.customer)); // Store customer data locally
         navigate(from, { replace: true }); // Navigate to the desired page after signup
       }
+      localStorage.setItem("Users", JSON.stringify(res.data))
+      
     } catch (err) {
       if (err.response) {
         // Check for 409 Conflict (User already exists)
