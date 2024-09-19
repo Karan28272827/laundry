@@ -27,23 +27,33 @@ function CustomerSignup() {
       email: data.email,
       password: data.password,
     };
-
+  
     try {
       const res = await axios.post('http://localhost:4001/user/signup', userInfo);
       console.log(res.data);
-
+  
       if (res.data) {
-        toast.success('Signup Successfully');
+        toast.success('Signup Successful');
         localStorage.setItem('Customer', JSON.stringify(res.data.customer)); // Store customer data locally
         navigate(from, { replace: true }); // Navigate to the desired page after signup
       }
     } catch (err) {
       if (err.response) {
-        console.log(err);
-        toast.error('Error: ' + err.response.data.message); // Show error if signup fails
+        // Check for 409 Conflict (User already exists)
+        if (err.response.status === 409) {
+          toast.error('Error: This email is already registered. Please use another email.');
+        } else {
+          // Handle other errors
+          toast.error('Error: ' + err.response.data.message);
+        }
+      } else {
+        // Handle network errors or other unexpected errors
+        toast.error('Error: Something went wrong. Please try again.');
       }
     }
   };
+  
+  
 
   return (
     <div className="customer-signup-container">

@@ -1,6 +1,6 @@
 // Home.js
 import React from 'react';
-import { Services, Footer } from './services';
+import { Services } from './services';
 
 
 
@@ -13,7 +13,7 @@ export default function Home() {
       <Services>
 
       </Services>
-      <Footer></Footer> 
+    
     </div>
   );
 }
