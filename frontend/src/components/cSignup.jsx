@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 function CustomerSignup() {
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname || '/cMain';
+  const from = location.state?.from?.pathname || '/CMain';
   
   // State to track if OTP input should be shown
   const [showOTP, setShowOTP] = useState(false);
@@ -32,7 +32,10 @@ function CustomerSignup() {
   
     try {
       const res = await axios.post('http://localhost:4001/user/signup', userInfo);
+      const res1 = await axios.post('http://localhost:4001/customer/signup', userInfo);
+      
       console.log(res.data);
+      console.log(res1.data);
   
       if (res.data) {
         toast.success('Signup Successful');

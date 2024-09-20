@@ -26,7 +26,7 @@ try {
 
 //defining routes 
 app.use('/cloth',clothRoute)
-app.use('/customer',customerRoute)
+app.use("/customer",customerRoute)
 app.use('/order',orderRoute)
 app.use("/user",userRoute)
 
