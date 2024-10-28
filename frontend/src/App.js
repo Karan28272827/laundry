@@ -13,6 +13,7 @@ import DSignup from './components/dSignup';
 import CMain from './components/cMain';
 // import LandingPage from './components/landingpage';
 import Lmain from './components/lMain';
+import Payment from './components/Payment';
 
 export default function App() {
     const [popupTrigger, setPopupTrigger] = useState(false);
@@ -72,6 +73,7 @@ export default function App() {
                 <Route path="/d-signup" element={<DSignup />} />
                 <Route path="/cmain" element={<CMain />} />
                 <Route path="/lmain" element={<Lmain />} />
+                <Route path="/Payment" element={<Payment />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Popup trigger={popupTrigger} setTrigger={setPopupTrigger}>

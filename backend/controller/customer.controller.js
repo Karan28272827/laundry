@@ -1,6 +1,5 @@
 import customer1 from "../model/customer.model.js";
 import bcryptjs from 'bcryptjs'
-import order1 from "../model/order.model.js"
 
 
 

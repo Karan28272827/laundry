@@ -1,30 +1,22 @@
-import mongoose from "mongoose";    
+// models/Order.js
+import mongoose from "mongoose";
 
-const orderSchema = mongoose.Schema({
-    service: {
-        type: String,
-        required: true,
+const orderSchema = new mongoose.Schema({
+  customerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer', required: false }, // Optional for general orders
+  products: [
+    {
+      name: { type: String, required: true },
+      price: { type: Number, required: true },
+      quantity: { type: Number, required: true },
     },
-    quantity: {
-        type: Number,
-        required: true,
-    },
-    price: {
-        type: Number,
-        required: true,
-    }
-})
+  ],
+  address: { type: String, required: true }, // Required for general orders
+  service: { type: String, required: true }, // Service type, required for all orders
+  delivery: { type: String, required: true }, // Delivery type, required for all orders
+  instructions: { type: String, required: false }, // Optional instructions
+  createdAt: { type: Date, default: Date.now },
+});
 
-const order1 = mongoose.model("orderAppend",orderSchema)
+export default mongoose.model('Order', orderSchema);
 
-// const customer1 = new customerRegistration({
-//     customer_id: 1,
-//     name: "Karan Paigude",
-//     phone_no: 8329472403,
-//     email: "paigudekaran2827@gmail.com",
-//     password: "hello",
-//     active: true
-// })
-// customer1.save();
 
-export default order1;
