@@ -1,7 +1,7 @@
 // Home.js
 import React from 'react';
-import { Services, Footer } from './services';
-import LandingPage from './landingpage';
+import { Services } from './services';
+
 
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <Services>
 
       </Services>
-      <Footer></Footer> 
+    
     </div>
   );
 }

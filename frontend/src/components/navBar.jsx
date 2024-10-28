@@ -7,10 +7,12 @@ export default function Nav({ onLoginClick, onSignupClick, linksVisible }) {
     const handleLogoClick = () => {
         navigate('/');
     };
+    
 
     const handleLoginClick = (e) => {
         e.preventDefault(); // Prevent default link behavior
-        onLoginClick(); // Trigger the login popup
+        navigate('/login'); 
+
     };
 
     const handleSignupClick = (e) => {
